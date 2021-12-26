@@ -26,7 +26,9 @@ public class LoginServlet extends HttpServlet {
         String user = request.getParameter("user");
         String namePattern = "^[A-Z]{1}[a-z]{2,}$";
 
+
         String pwd = request.getParameter("pwd");
+        String pwdPattern = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()]).{8,}$";
         String userId = getServletConfig().getInitParameter("user");
         String password = getServletConfig().getInitParameter("password");
         if (userId.equals(user) && user.matches(namePattern) && password.equals(pwd)) {
